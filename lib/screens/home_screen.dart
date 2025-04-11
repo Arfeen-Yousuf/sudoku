@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:sudoku/widgets/primary_button.dart';
+
+import 'play_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    //Make widget variables to break the UI into smaller components
 
-    final continueButton = FilledButton(
-      onPressed: () {},
-      style: FilledButton.styleFrom(
-        minimumSize: Size.fromHeight(60),
-        textStyle: textTheme.labelLarge?.copyWith(fontSize: 16),
-      ),
+    //TODO: Create this button only if user has a continued game
+    final continueButton = PrimaryButton(
+      onPressed: () => _onContinuePressed(context),
       child: Column(
         children: [
           Text('Continue'),
@@ -25,12 +25,8 @@ class HomeScreen extends StatelessWidget {
       ),
     );
 
-    final newGameButton = FilledButton(
-      onPressed: () {},
-      style: FilledButton.styleFrom(
-        minimumSize: Size.fromHeight(60),
-        textStyle: textTheme.labelLarge?.copyWith(fontSize: 16),
-      ),
+    final newGameButton = PrimaryButton(
+      onPressed: () => _onNewGamePressed(context),
       child: Text('New Game'),
     );
 
@@ -38,9 +34,11 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(26),
+          //Column allows to layout children vertically
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              //Spacer takes up remaining unused space
               const Spacer(flex: 3),
               LayoutBuilder(
                 builder:
@@ -53,7 +51,7 @@ class HomeScreen extends StatelessWidget {
               Text(
                 'Sudoku',
                 textAlign: TextAlign.center,
-                style: TextTheme.of(context).headlineMedium,
+                style: TextTheme.of(context).headlineLarge,
               ),
               const Spacer(flex: 2),
               continueButton,
@@ -63,6 +61,20 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  void _onContinuePressed(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => PlayScreen()),
+    );
+  }
+
+  void _onNewGamePressed(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => PlayScreen()),
     );
   }
 }
