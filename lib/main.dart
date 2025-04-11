@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sudoku/screens/home_screen.dart';
+
+import 'theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,11 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'Sudoku',
+      theme: themeData,
+      home: const HomeScreen(),
     );
   }
 }
