@@ -31,44 +31,43 @@ git clone https://github.com/your-username/sudoku-learner.git
 cd sudoku-learner
 flutter pub get
 flutter run
+```
 
-
-🧰 Flutter Beginner Resources
+### 🧰 Flutter Beginner Resources
 
 If you're new to Flutter or want to brush up while exploring this app, check out these helpful guides:
 
-    🔹 Flutter Layouts Cheat Sheet
-    🔹 Flutter Widgets Catalog
-    🔹 Building Layouts in Flutter
-    🔹 Flutter Codelabs for Beginners
+    🔹 Flutter Layouts (https://docs.flutter.dev/ui/layout)
+    🔹 Flutter Widgets Catalog (https://docs.flutter.dev/ui/widgets)
+    🔹 Flutter Codelabs for Beginners (https://docs.flutter.dev/codelabs)
 
-📁 Folder Structure
-
+### 📁 Folder Structure
+```bash
 lib/
 ├── main.dart         # Entry point
 ├── screens/
 │   └── home_screen.dart
-│   └── sudoku_screen.dart
+│   └── play_screen.dart
 ├── widgets/
-│   └── sudoku_board.dart
-│   └── number_pad.dart
-├── constants/
-│   └── app_styles.dart
+│   └── game_cell.dart
+│   └── game_grid.dart
+│   └── number_button.dart
+│   └── primary_button.dart
+├── theme/
+│   └── theme.dart
 assets/
-├── puzzles/
-│   └── easy.json     # (Future use)
+├── images/
+│   └── sudoku.png
+```
 
-🔮 What's Next?
+### 🔮 What's Next?
 
-In upcoming weeks, the app will support:
+In the next week, the app will support:
 
-    Tap-to-select cells and number inputs.
-
-    Basic hinting techniques (like Naked Single, Hidden Single).
-
-    A learning section with visual explanations.
-
-👨‍💻 Author
+- Tap-to-select cells and number inputs.
+- Check game validation
+- "Learn to play" screen
+    
+### 👨‍💻 Author
 
 Created by Arfeen Yousuf
-```
